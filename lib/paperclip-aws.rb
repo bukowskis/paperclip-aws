@@ -145,7 +145,7 @@ module Paperclip
               :file => file.path,
               :acl => @s3_permissions[:style.to_sym] || @s3_permissions[:default],
               :storage_class => @s3_options[:storage_class],
-              :content_type => file.content_type,
+              :content_type => file.content_type.to_s.strip,
               :content_disposition => @s3_options[:content_disposition],
               :server_side_encryption => @s3_options[:sse]
             )
